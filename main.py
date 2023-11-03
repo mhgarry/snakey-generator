@@ -25,3 +25,9 @@ password_label.pack(pady=10) # fixes the position of the password label to the r
 
 # create a button to generate the password 
 generate_button = tk.Button(root, text="Generate Password", command=generate_password) # initializes a button to generate a password using the generate_password function
+
+# fix the position of the button to the root window 
+generate_button.pack(pady=10) # fixes the position of the generate button to the root window
+
+# start the GUI
+root.mainloop() # runs the GUI
