@@ -6,3 +6,11 @@ letters = string.ascii_letters # generates all lowercase and uppercase letters i
 digits = string.digits # generates all digits from 0-9
 special_chars = string.punctuation # generates all special characters we are using in this program
 
+available_chars = letters + digits + special_chars # defines all characters that are available to be used in the password
+
+password = '' # intializes password variable to be used later
+
+for i in range(12, 124):
+    password += secrets.choice(available_chars) # adds a random character from the available characters to the password variable
+    
+print(password)
