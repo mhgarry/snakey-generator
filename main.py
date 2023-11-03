@@ -1,16 +1,20 @@
 import secrets # import secrets module for generating random characters
 import string # import string module for string operations
+import tkinter as tk # import tkinter module to make GUI
 
-# variables for letters, digits, and special characters to be used in later generated passwords 
-letters = string.ascii_letters # generates all lowercase and uppercase letters in the alphabet
-digits = string.digits # generates all digits from 0-9
-special_chars = string.punctuation # generates all special characters we are using in this program
-
-available_chars = letters + digits + special_chars # defines all characters that are available to be used in the password
-
-password = '' # intializes password variable to be used later
-
-for i in range(12, 124):
-    password += secrets.choice(available_chars) # adds a random character from the available characters to the password variable
+# print(password)
+def generate_password():
+    letters = string.ascii_letters # generates all lowercase and uppercase letters in the alphabet
+    digits = string.digits # generate all digits from 0-9
+    special_chars = string.punctuation # generates all special characters we are using in this program
+    available_chars = letters + digits + special_chars # defines all characters that are available to be used in the password
     
-print(password)
+    password = '' # initializes password variable to be used later
+    for i in range(12, 124):
+        password += secrets.choice(available_chars) # adds a random character from the available characters to the password variable on each iteration of the loop
+        
+    password_label.config(text=password) # sets the text of the password_label to the generated password to represent it on the GUI
+    
+# create application window 
+root = tk.Tk() # initializes the root window
+root.title("Password Generator") # sets the title of the root window to password generat0r 
