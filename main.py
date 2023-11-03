@@ -17,4 +17,8 @@ def generate_password():
     
 # create application window 
 root = tk.Tk() # initializes the root window
-root.title("Password Generator") # sets the title of the root window to password generat0r 
+root.title("Password Generator") # sets the title of the root window to password generator
+
+# create a password display label 
+password_label = tk.Label(root, font=('Helvetica', 18, 'bold')) # initializes the password_label and sets the font to Helvetica, size to 18, and bolds the text
+password_label.pack(pady=10) # fixes the position of the password label to the root window
